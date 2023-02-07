@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.8.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.zzq.gulimall</groupId>
+    <artifactId>gulimall-product</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>gulimall-product</name>
+    <description>谷粒商城-商品服务</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+    </properties>
+
+    <dependencies>
+
+        <!--		<dependency>-->
+        <!--			<groupId>com.qiniu</groupId>-->
+        <!--			<artifactId>qiniu-java-sdk</artifactId>-->
+        <!--			<version>[7.7.0, 7.10.99]</version>-->
+        <!--		</dependency>-->
+        <!--		<dependency>-->
+        <!--			<groupId>com.squareup.okhttp3</groupId>-->
+        <!--			<artifactId>okhttp</artifactId>-->
+        <!--			<version>3.14.4</version>-->
+        <!--			<scope>runtime</scope>-->
+        <!--		</dependency>-->
+
+
+        <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jdom/jdom -->
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zzq.gulimall</groupId>
+            <artifactId>gulimall-common</artifactId>
+            <version>1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 模板引擎 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!--引入热部署插件-->
+        <!--		<dependency>-->
+        <!--			<groupId>org.springframework.boot</groupId>-->
+        <!--			<artifactId>spring-boot-devtools</artifactId>-->
+        <!--			&lt;!&ndash; 设置只在运行时起作用 ，打包时不打进去，默认为runtime &ndash;&gt;-->
+        <!--			<scope>runtime</scope>-->
+        <!--			&lt;!&ndash; 设置不能被其它模块继承，如果多个子模块可以去掉 ，不必须 &ndash;&gt;-->
+        <!--			<optional>true</optional>-->
+        <!--		</dependency>-->
+
+
+        <!-- 引入redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <!--			<exclusions>-->
+            <!--				<exclusion>-->
+            <!--					<groupId>io.lettuce</groupId>-->
+            <!--					<artifactId>lettuce-core</artifactId>-->
+            <!--				</exclusion>-->
+            <!--			</exclusions>-->
+        </dependency>
+
+        <!--		<dependency>-->
+        <!--			<groupId>redis.clients</groupId>-->
+        <!--			<artifactId>jedis</artifactId>-->
+        <!--		</dependency>-->
+
+        <!-- 以后使用Redisson作为所有分布式锁 -->
+        <!--这个用作练习，后面可以使用redisson-spring-boot-starter-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 整合springsession -->
+        <!--		<dependency>-->
+        <!--			<groupId>org.springframework.session</groupId>-->
+        <!--			<artifactId>spring-session-data-redis</artifactId>-->
+        <!--		</dependency>-->
+
+        <!--		<dependency>-->
+        <!--			<groupId>com.alibaba.cloud</groupId>-->
+        <!--			<artifactId>spring-cloud-starter-alibaba-seata</artifactId>-->
+        <!--			<exclusions>-->
+        <!--				<exclusion>-->
+        <!--					<groupId>io.seata</groupId>-->
+        <!--					<artifactId>seata-all</artifactId>-->
+        <!--				</exclusion>-->
+        <!--			</exclusions>-->
+        <!--		</dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-alicloud-oss</artifactId>-->
+        <!--        </dependency>-->
+
+
+        <!--        fastjson的漏洞解决: 我这里是降到有漏洞的版本 反序列化报错（autoType）    /  按官网加配置-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>fastjson</artifactId>-->
+<!--            <version>1.2.47</version>-->
+<!--        </dependency>-->
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.1.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--				<configuration>-->
+                <!--					<fork>true</fork> &lt;!&ndash; 如果要加此项，必须设置为true 非必须&ndash;&gt;-->
+                <!--					&lt;!&ndash; 支持静态文件热部署 非必须 &ndash;&gt;-->
+                <!--					<addResources>true</addResources>-->
+                <!--				</configuration>-->
+            </plugin>
+        </plugins>
+    </build>
+</project>

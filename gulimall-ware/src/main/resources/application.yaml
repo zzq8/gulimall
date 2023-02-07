@@ -1,0 +1,40 @@
+server:
+  port: 11000
+
+spring:
+  datasource:
+    username: root
+    password: a59964360
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.34.55.204:3306/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    hikari:
+      max-lifetime: 120000
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: gulimall-ware
+  jackson:
+    date-format: yyyy-mm-dd HH:mm:ss
+    time-zone: GMT+8
+  #MQ
+  rabbitmq:
+    addresses: 101.34.55.204
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml  #\u6709\u9ED8\u8BA4\u7684 \u5177\u4F53\u770B MybatisPlusProperties
+  global-config:
+    db-config:
+      id-type: auto
+
+logging:
+  level:
+    com.zzq.gulimall.ware.dao: debug
+

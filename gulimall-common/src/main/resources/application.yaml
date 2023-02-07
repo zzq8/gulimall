@@ -1,0 +1,8 @@
+#在想 common 可以配好给下面继承它的Model用吗    不能继承！！！解决：用Nacos配置中心公用配置
+spring:
+  redis:
+    host: 101.34.55.204
+    password: 547061946
+    timeout: 60000
+  session:
+    store-type: redis
