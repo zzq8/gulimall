@@ -37,6 +37,24 @@ public class AppRegisterController {
     @Autowired
     private UserService userService;
 
+
+    /**
+     * XD 20240320 学习Redisson    看别人代码注册加了锁
+     * 一、注册
+     *      // 1.加锁
+     *     RLock lock = redissonClient.getLock(MemberConstant.LOCK_KEY_REGIST_PRE + user.getPhone());
+     *     try {
+     *         lock.tryLock(30L, TimeUnit.SECONDS);
+     *     } finally {
+     *         lock.unlock();
+     *     }
+     *
+     *
+     * 二、秒杀商品定时上架，保证幂等性问题
+     * // 分布式锁（幂等性）
+     * RLock lock = redissonClient.getLock(SeckillConstant.UPLOAD_LOCK);
+     *
+     */
     @PostMapping("register")
     @ApiOperation("注册")
     public R register(@RequestBody RegisterForm form){
